@@ -37,11 +37,17 @@ Cada region al menos tendrá un AZ mayor o igual a 2
 
 Si las regiones son los bloques primarios de las soluciones cloud, AZ son los que proporcionan la tolerancia a fallos y alta disponibilidad
 ### Edge locations
+- An edge location is where end users access services located at AWS
+- A site that CloudFront uses to cache copies of your content for faster delivery to users at any location.
+- Are AWS data centers designed to deliver services with the lowest latency possible
 EL, sirve 2 propositos:
 - Amazon S3
 - Amazon CDN
+
 No se posee un control directo de un EL, es decir, no se puede elegir que determinado EL proporcione X servicio/contenido, podemos elegir que para nuestra solucion 
-determinado EL será el más conveniente
+determinado servicios es el mas conveniente y el propio AWS lo asociará con un EL
+
+You can’t run your workloads directly in edge locations; they’re only used by Amazon’s managed services.
 
 ### Scope of services
 - Global: no necesitamos seleccionar determinada region o AZ, realizar cambios en x service, se replicará en todoo
@@ -51,3 +57,5 @@ determinado EL será el más conveniente
   capacidad de almacenamiento de dicha mv, se tendria que usar un servicio AZ para ese AZ ...suena raro pero es la forma en la que lo he entendido, porque no tendria
   sentido aumentar el almacenamiento de dicha MV y que ese nuevo espacio se encuentre en un AZ diferente ... en una región diferente, .-.
   
+ ### Revisar:
+ https://wa.aws.amazon.com/wellarchitected/2020-07-02T19-33-23/wat.concepts.wa-concepts.en.html
