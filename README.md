@@ -50,4 +50,4 @@ determinado EL será el más conveniente
   esto se entiende mejor con un ejemplo: supongamos que creamos una maquina virtual en cierta region (y por defecto con un AZ), si deseamos aumentar la 
   capacidad de almacenamiento de dicha mv, se tendria que usar un servicio AZ para ese AZ ...suena raro pero es la forma en la que lo he entendido, porque no tendria
   sentido aumentar el almacenamiento de dicha MV y que ese nuevo espacio se encuentre en un AZ diferente ... en una región diferente, .-.
-  tendriamos que usar un servicio e
+  
