@@ -19,17 +19,26 @@ public class App {
 
 		try (var s3Client = S3Client.builder().region(region).build();) {
 
-			var bucketName = "bucket" + System.currentTimeMillis();
-			var key = "key";
+			var bucketName = "bucket1637810618858";
+			var key = "key-file";
 
 			tutorialSetup(s3Client, bucketName, region);
 			System.out.println("uploading object...");
-
-			s3Client.putObject(PutObjectRequest.builder().bucket(bucketName).key(key).build(),
-					RequestBody.fromString("TEST-DMNR {sdk-java}"));
+			var type= "B";
+			putInbucket(s3Client, bucketName, key, type);
 
 			System.out.println("upload complete");
 		}
+	}
+
+	private static void putInbucket(S3Client s3Client, String bucketName, String key, String type) {
+		
+		if ("A".equals(type)) {
+			s3Client.putObject(PutObjectRequest.builder().bucket(bucketName).key(key).build(),
+					RequestBody.fromString("TEST-DMNR {sdk-java}"));
+			return;
+		}
+		
 	}
 
 	private static void tutorialSetup(S3Client s3Client, String bucketName, Region region) {
